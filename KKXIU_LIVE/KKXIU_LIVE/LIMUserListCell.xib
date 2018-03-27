@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LIMUserListCell">
+            <rect key="frame" x="0.0" y="0.0" width="35" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="35" height="30"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pushpage_11" translatesAutoresizingMaskIntoConstraints="NO" id="cR7-rK-wTE">
+                        <rect key="frame" x="3" y="0.0" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pushpage_1" translatesAutoresizingMaskIntoConstraints="NO" id="Tfj-tl-EpY">
+                        <rect key="frame" x="0.0" y="14" width="35" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="FY6-j8-9KZ"/>
+                            <constraint firstAttribute="width" constant="35" id="bTq-cF-tU7"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="qIf-cr-MAE"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Tfj-tl-EpY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dyy-vB-mP6"/>
+                <constraint firstAttribute="bottom" secondItem="Tfj-tl-EpY" secondAttribute="bottom" id="sHe-JM-QiL"/>
+            </constraints>
+            <connections>
+                <outlet property="gradeImageV" destination="Tfj-tl-EpY" id="RAA-f2-PUe"/>
+                <outlet property="iconImageV" destination="cR7-rK-wTE" id="9wh-Lb-fUN"/>
+            </connections>
+            <point key="canvasLocation" x="-62" y="-19"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="pushpage_1" width="34" height="15"/>
+        <image name="pushpage_11" width="30" height="30"/>
+    </resources>
+</document>

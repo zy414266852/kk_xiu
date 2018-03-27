@@ -1,0 +1,65 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,gamebody_json,texture_png,skeleton_json,texture_json,texture_png30,skeleton_json30,texture_json30,texture_png30yin,skeleton_json30yin,texture_json30yin",
+			"name": "preload"
+		}
+	],
+	"resources": [{
+		"name":"description_json",
+		"type":"json",
+		"url":"config/description.json"
+	},
+		{
+			"name": "gamebody_json",
+			"type": "sheet",
+			"url": "assets/gamebody.json"
+		},
+		{
+			"name":"texture_png",
+			"type":"image",
+			"url":"assets/0829new_tex.png"
+		},
+		{
+			"name":"skeleton_json",
+			"type":"json",
+			"url":"assets/0829new_ske.json"
+		},
+		{
+			"name":"texture_json",
+			"type":"json",
+			"url":"assets/0829new_tex.json"
+		},
+		{
+			"name":"texture_png30",
+			"type":"image",
+			"url":"assets/0830new_tex.png"
+		},
+		{
+			"name":"skeleton_json30",
+			"type":"json",
+			"url":"assets/0830new_ske.json"
+		},
+		{
+			"name":"texture_json30",
+			"type":"json",
+			"url":"assets/0830new_tex.json"
+		}
+	,
+		{
+			"name":"texture_png30yin",
+			"type":"image",
+			"url":"assets/yin0829new_tex.png"
+		},
+		{
+			"name":"skeleton_json30yin",
+			"type":"json",
+			"url":"assets/yin0829new_ske.json"
+		},
+		{
+			"name":"texture_json30yin",
+			"type":"json",
+			"url":"assets/yin0829new_tex.json"
+		}
+	]
+}

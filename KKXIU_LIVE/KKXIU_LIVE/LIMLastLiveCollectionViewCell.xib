@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LIMLastLiveCollectionViewCell" id="gTV-IL-0wX" customClass="LIMLastLiveCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="187" height="187"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="187" height="187"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livepage" translatesAutoresizingMaskIntoConstraints="NO" id="ZUi-up-u6z">
+                        <rect key="frame" x="0.0" y="0.0" width="187" height="187"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx分钟前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hp8-Ep-SqN">
+                        <rect key="frame" x="94" y="162" width="85" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主播名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL2-6y-joW">
+                        <rect key="frame" x="9" y="162" width="85" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ZUi-up-u6z" secondAttribute="bottom" id="6jv-Vg-C4n"/>
+                <constraint firstItem="ZUi-up-u6z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="82Z-tm-7ic"/>
+                <constraint firstAttribute="trailing" secondItem="ZUi-up-u6z" secondAttribute="trailing" id="9og-og-lqn"/>
+                <constraint firstAttribute="bottom" secondItem="Hp8-Ep-SqN" secondAttribute="bottom" constant="11" id="F2k-yg-IC2"/>
+                <constraint firstItem="bL2-6y-joW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="9" id="IIl-sj-u9v"/>
+                <constraint firstAttribute="bottom" secondItem="Hp8-Ep-SqN" secondAttribute="bottom" constant="11" id="LJ6-99-6zJ"/>
+                <constraint firstItem="ZUi-up-u6z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QfG-ui-igl"/>
+                <constraint firstItem="Hp8-Ep-SqN" firstAttribute="width" secondItem="bL2-6y-joW" secondAttribute="width" id="Wsh-KN-NNl"/>
+                <constraint firstAttribute="trailing" secondItem="Hp8-Ep-SqN" secondAttribute="trailing" constant="8.5" id="aMk-Y9-8Lf"/>
+                <constraint firstItem="Hp8-Ep-SqN" firstAttribute="leading" secondItem="bL2-6y-joW" secondAttribute="trailing" id="exu-gZ-4fr"/>
+                <constraint firstAttribute="bottom" secondItem="bL2-6y-joW" secondAttribute="bottom" constant="11" id="tJE-aZ-cz1"/>
+            </constraints>
+            <size key="customSize" width="187" height="187"/>
+            <connections>
+                <outlet property="backImage" destination="ZUi-up-u6z" id="zQl-jL-X1t"/>
+                <outlet property="minuteLabel" destination="Hp8-Ep-SqN" id="QZ6-zj-Xgw"/>
+                <outlet property="nameLabel" destination="bL2-6y-joW" id="rwD-JT-Tto"/>
+            </connections>
+            <point key="canvasLocation" x="-40.5" y="1.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="livepage" width="720" height="960"/>
+    </resources>
+</document>

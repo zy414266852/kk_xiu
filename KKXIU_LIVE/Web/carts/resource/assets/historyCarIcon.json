@@ -1,0 +1,10 @@
+{"file":"historyCarIcon.png","frames":{
+"Car1_A":{"x":48,"y":97,"w":46,"h":45,"offX":1,"offY":2,"sourceW":48,"sourceH":48},
+"Car1_B":{"x":0,"y":50,"w":46,"h":46,"offX":1,"offY":1,"sourceW":48,"sourceH":48},
+"Car2_A":{"x":50,"y":49,"w":46,"h":46,"offX":1,"offY":1,"sourceW":48,"sourceH":48},
+"Car2_B":{"x":50,"y":0,"w":47,"h":47,"offX":1,"offY":1,"sourceW":48,"sourceH":48},
+"Car3_A":{"x":0,"y":98,"w":41,"h":41,"offX":4,"offY":4,"sourceW":48,"sourceH":48},
+"Car3_B":{"x":0,"y":0,"w":48,"h":48,"offX":0,"offY":0,"sourceW":48,"sourceH":48},
+"new":{"x":96,"y":97,"w":30,"h":30,"offX":0,"offY":0,"sourceW":30,"sourceH":30},
+"SmallBonus":{"x":50,"y":144,"w":48,"h":20,"offX":0,"offY":14,"sourceW":48,"sourceH":48},
+"BigBonus":{"x":0,"y":144,"w":48,"h":20,"offX":0,"offY":14,"sourceW":48,"sourceH":48}}}

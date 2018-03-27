@@ -1,0 +1,35 @@
+{
+	"groups":[
+	{
+		"keys":"gamebody_json,clubjson_json,numberjson_json,red_png,black_png",
+		"name":"preload"
+	}],
+	"resources":[
+	{
+		"name":"gamebody_json",
+		"type":"sheet",
+		"url":"assets/gamebody.json"
+	},
+	{
+		"name":"clubjson_json",
+		"type":"sheet",
+		"url":"assets/clubjson.json"
+	},
+	{
+			"name":"numberjson_json",
+			"type":"sheet",
+			"url":"assets/numberjson.json"
+	},
+		{
+			"name":"red_png",
+			"type":"image",
+			"url":"assets/red.png"
+		}
+	,
+		{
+			"name":"black_png",
+			"type":"image",
+			"url":"assets/black.png"
+		}
+	]
+}

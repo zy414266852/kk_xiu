@@ -1,0 +1,17 @@
+{"file":"gameespecially.png","frames":{
+"large":{"x":472,"y":1048,"w":534,"h":211,"offX":3,"offY":1,"sourceW":540,"sourceH":214},
+"runing":{"x":0,"y":0,"w":611,"h":615,"offX":4,"offY":4,"sourceW":619,"sourceH":619},
+"times":{"x":472,"y":617,"w":540,"h":214,"offX":0,"offY":0,"sourceW":540,"sourceH":214},
+"verylarge":{"x":472,"y":833,"w":534,"h":213,"offX":3,"offY":0,"sourceW":540,"sourceH":215},
+"9_0000_0":{"x":823,"y":0,"w":39,"h":41,"offX":1,"offY":1,"sourceW":41,"sourceH":42},
+"9_0000_1":{"x":981,"y":0,"w":30,"h":40,"offX":6,"offY":1,"sourceW":41,"sourceH":42},
+"9_0000_2":{"x":740,"y":0,"w":40,"h":40,"offX":1,"offY":1,"sourceW":41,"sourceH":42},
+"9_0000_3":{"x":656,"y":0,"w":40,"h":42,"offX":1,"offY":0,"sourceW":41,"sourceH":42},
+"9_0000_4":{"x":864,"y":0,"w":38,"h":41,"offX":2,"offY":1,"sourceW":41,"sourceH":42},
+"9_0000_5":{"x":698,"y":0,"w":40,"h":41,"offX":1,"offY":1,"sourceW":41,"sourceH":42},
+"9_0000_6":{"x":782,"y":0,"w":39,"h":41,"offX":1,"offY":1,"sourceW":41,"sourceH":42},
+"9_0000_7":{"x":944,"y":0,"w":35,"h":40,"offX":3,"offY":1,"sourceW":41,"sourceH":42},
+"9_0000_8":{"x":613,"y":0,"w":41,"h":41,"offX":0,"offY":1,"sourceW":41,"sourceH":42},
+"9_0000_9":{"x":904,"y":0,"w":38,"h":41,"offX":2,"offY":1,"sourceW":41,"sourceH":42},
+"9_0000_d":{"x":740,"y":42,"w":14,"h":12,"offX":12,"offY":29,"sourceW":41,"sourceH":42},
+"bglarge":{"x":0,"y":617,"w":470,"h":470,"offX":0,"offY":1,"sourceW":470,"sourceH":471}}}

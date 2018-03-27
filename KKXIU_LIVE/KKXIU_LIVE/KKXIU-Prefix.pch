@@ -1,0 +1,186 @@
+//
+//  KKXIU-Prefix.pch
+//  KKXIU_LIVE
+//
+//  Created by 张洋 on 2017/8/8.
+//  Copyright © 2017年 张洋. All rights reserved.
+//
+
+#ifndef KKXIU_Prefix_pch
+#define KKXIU_Prefix_pch     
+
+#ifdef __OBJC__ // 只被object－c文件所引用
+#import "UIColor+Extension.h"
+#import <Masonry.h>
+#import <SVProgressHUD.h>
+//#import "EmptyDataView.h"
+//#import <SVProgressHUD.h>
+#import "UIView+SDFrame.h"
+#import "SDChatMessageConst.h"
+#import "MJExtension.h"
+#import "CcUserModel.h"
+
+
+#pragma mark -
+#pragma mark  ------------Size----------------------
+#define kScreenW [UIScreen mainScreen].bounds.size.width
+#define kScreenH [UIScreen mainScreen].bounds.size.height
+#define kiphone6 [UIScreen mainScreen].bounds.size.width/375.0
+#define kPushMsgH 344
+
+
+#pragma mark --------------Color--------------------
+#define kColor_Default [UIColor colorWithHexString:@"ffcb00"]
+#define kBlackColor_Default [UIColor colorWithHexString:@"2f2f2f"]
+
+#pragma mark  ------------WeakSelf------------------
+#define WS(weakSelf) __weak typeof(self) weakSelf = self;
+
+#define webPath [[NSBundle mainBundle] pathForResource:@"Web" ofType:nil]
+#define mLocalPort 9283
+#pragma mark -
+#pragma mark ------------Font----------------------
+#define kPingFang_M       @"PingFang-SC-Medium"
+#define kPingFang_S       @"PingFang-SC-Semibold"
+
+#pragma mark -
+#pragma mark ------------HTTP----------------------
+// 通用参数
+#define mAllPara         @"os":@"ios",@"ver":@"1.0.0",@"encry":@"0"
+// 请求前缀
+//#define mPrefixUrl       @"http://app.api.kkxiu.com"
+//#define mPrefixUrl       @"http://app.api.coco98.com"
+#define mPrefixUrl       @"http://app.api.kaka09.com"
+
+#define zwwUrl [NSString stringWithFormat:@"http://127.0.0.1:%d/zww/index.html",mLocalPort]
+#define scjlUrl [NSString stringWithFormat:@"http://127.0.0.1:%d/scjl/index.html",mLocalPort]
+#define cartsUrl [NSString stringWithFormat:@"http://127.0.0.1:%d/carts/index.html",mLocalPort]
+#define wlzbUrl [NSString stringWithFormat:@"http://127.0.0.1:%d/wlzb/index.html",mLocalPort]
+#define hdczUrl [NSString stringWithFormat:@"http://127.0.0.1:%d/hdcz/index.html",mLocalPort]
+//#define wlzbUrl  @"http://app.game.kkxiu.com/wlzb/"
+
+#define zwwUrl_help [NSString stringWithFormat:@"/ruleproject/zww/zww.html"]
+#define scjlUrl_help [NSString stringWithFormat:@"/ruleproject/scjl/scjl.html"]
+#define cartsUrl_help [NSString stringWithFormat:@"/ruleproject/carts/carts.html"]
+#define wlzbUrl_help [NSString stringWithFormat:@"/ruleproject/wlzb/wlzb.html"]
+#define hdczUrl_help [NSString stringWithFormat:@"/ruleproject/hdcz/hdcz.html"]
+
+// 验证码请求
+#define mVcode_Login [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/sendSMS.ashx"]
+// 手机号登录
+#define mPhone_Login [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/login.ashx"]
+// 第三方账号登录
+#define mThird_Login [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/userLoginByThird.ashx"]
+// 获取首页-热门
+#define mHot_Home [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getIndexList.ashx"]
+// 获取首页-关注
+#define mHot_Follow [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getIndexFollowList.ashx"]
+
+// 获取首页-附近
+#define mNear_Home [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getNearByList.ashx"]
+
+//获取游戏大厅列表：
+#define mGame_Home [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/game/getGameList.ashx"]
+
+// 拉流地址
+#define mLive_Login [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/live/enterRoom.ashx"]
+// 开始 直播
+#define mStar_Live [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/live/startLive.ashx"]
+// 结束 直播
+#define mStop_Push [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/live/endLive.ashx"]
+// ok获取推流地址：/live/getStartLiveInfo.ashx
+#define mStartLiveInfo [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/live/getStartLiveInfo.ashx"]
+// 获取本人个人中心：
+#define mPresonal_Info [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getMyInfo.ashx"]
+// 获取他人个人中心：
+#define mOther_Info [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getOtherDetails.ashx"]
+
+// 获取主播等级：
+#define mUp_Level [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getCompereLevelInfo.ashx"]
+// 获取用户等级：
+#define mUser_Level [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getUserLevelInfo.ashx"]
+
+
+// 获取用户列表
+#define mLive_userList [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/live/getRoomUserList.ashx"]
+// 获取礼物列表
+#define mLive_presentList [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/gift/getGiftList.ashx"]
+
+// 获取弹窗信息
+#define mLive_SimpleInfo [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getSimpleInfo.ashx"]
+// ok赠送礼物：/gift/sendGift.ashx
+#define mGive_gift [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/gift/sendGift.ashx"]
+//  魅力列表
+#define mRank_gift [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/gift/getUserConsumeList.ashx"]
+
+//ok关注他人：
+#define mFollow_other [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/follow.ashx"]
+//ok取关他人：
+#define mFollow_delete [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/cancelFollow.ashx"]
+
+
+// 关注列表
+#define mFollow_List [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getFollowList.ashx"]
+// 粉丝列表
+#define mFans_List [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getFansList.ashx"]
+// 移除粉丝
+#define mFans_delete [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/cancelFans.ashx"]
+// 搜索列表
+#define mSearch_List [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/search.ashx"]
+
+// 猜你喜欢
+#define mLike_guess [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getGuessLikeList.ashx"]
+// 搜索
+#define mSearch [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/search.ashx"]
+
+
+//ok获取个人中心-我的收益：/api/getUserIncome.ashx
+#define mGetUserIncome [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getUserIncome.ashx"]
+//ok获取个人中心-我的收益-领取收益：
+#define mPopIncome [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/userPopIncome.ashx"]
+
+//ok获取个人中心-我的收益-收礼记录：
+#define mGetGiftList [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getUserGetGiftList.ashx"]
+//ok获取个人中心-我的收益-领取记录：
+#define mIncomeList [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getUserIncomeList.ashx"]
+//ok获取个人中心-充值记录：
+#define mPayList [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getUserPayList.ashx"]
+//ok修改个人信息：
+#define mSaveUserInfo [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/saveUserInfo.ashx"]
+
+
+//ok绑定手机：
+#define mBindMobile [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/bindMobile.ashx"]
+//ok实名认证：
+#define mAuth [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/userAuth.ashx"]
+//ok上传图片：
+#define mUp_cover [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/uploadCover.ashx"]
+//ok删除相册图片：
+#define mDelCover [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/delCover.ashx"]
+//ok替换图片：
+#define mReplaceCover [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/replaceCover.ashx"]
+//ok获取消息-系统公告：
+#define mSysNotice [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getSysNotice.ashx"]
+//ok获取配置数据：
+#define mGetConf [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/getConf.ashx"]
+//直播结束
+#define mLiveEND [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/live/endLive.ashx"]
+// 退出直播
+#define mLeaveLive [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/live/levelRoom.ashx"]
+
+
+//ok设置-意见反馈：
+#define mFeedBack [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/feedback.ashx"]
+
+//支付验证：
+#define mPay [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/pay/pay.ashx"]
+//ok修改直播标题：/live/saveLiveTitle.ashx
+#define mSaveTitle [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/live/saveLiveTitle.ashx"]
+//ok发送弹幕扣费：
+#define mFlyMsg [NSString stringWithFormat:@"%@%@",mPrefixUrl,@"/api/sendFlyMsg.ashx"]
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+#endif /* KKXIU_Prefix_pch */

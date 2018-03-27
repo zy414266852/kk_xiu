@@ -1,0 +1,23 @@
+{
+  "groups": [
+    {
+      "keys": "description_json,gamebody_json,gameespecially_json,starjson_json",
+      "name": "preload"
+    }
+  ],
+  "resources": [
+    {
+      "name": "gamebody_json",
+      "type": "sheet",
+      "url": "assets/gamebody.json"
+    },{
+      "name": "gameespecially_json",
+      "type": "sheet",
+      "url": "assets/gameespecially.json"
+    },{
+      "name": "starjson_json",
+      "type": "sheet",
+      "url": "assets/starjson.json"
+    }
+  ]
+}

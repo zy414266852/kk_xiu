@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Egret</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #00000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+         data-entry-class="Main"
+         data-orientation="auto"
+         data-scale-mode="fixedWidth"
+         data-frame-rate="30"
+         data-content-width="750"
+         data-content-height="1334"
+         data-show-paint-rect="false"
+         data-multi-fingered="2"
+         data-show-fps="false" data-show-log="false"
+         data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+    </div>
+<script>
+    var loadScript = function (list, callback) {
+        var loaded = 0;
+        var loadNext = function () {
+            loadSingleScript(list[loaded], function () {
+                loaded++;
+                if (loaded >= list.length) {
+                    callback();
+                }
+                else {
+                    loadNext();
+                }
+            })
+        };
+        loadNext();
+    };
+
+    var loadSingleScript = function (src, callback) {
+        var s = document.createElement('script');
+        s.async = false;
+        s.src = src;
+        s.addEventListener('load', function () {
+            s.parentNode.removeChild(s);
+            s.removeEventListener('load', arguments.callee, false);
+            callback();
+        }, false);
+        document.body.appendChild(s);
+    };
+//    var str="{\"initial\":[\"libs/modules/egret/egret.min.js\",\"libs/modules/egret/egret.web.min.js\",\"libs/modules/game/game.min.js\",\"libs/modules/tween/tween.min.js\",\"libs/modules/res/res.min.js\",\"promise/promise.min.js\"],\"game\":[\"main.min.js\"]}";
+//    var manifest = JSON.parse(str);
+//    var list = manifest.initial.concat(manifest.game);
+//    loadScript(list, function () {
+//        /**
+//         * {
+//             * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+//             * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+//             * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+//             * "retina": //Whether the canvas is based on the devicePixelRatio
+//             * }
+//         **/
+//        egret.runEgret({ renderMode: "webgl", audioType: 0 });
+//    });
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', './manifest.json?v=' + Math.random(), true);
+    xhr.addEventListener("load", function () {
+        var manifest = JSON.parse(xhr.response);
+        var list = manifest.initial.concat(manifest.game);
+        loadScript(list, function () {
+             /**
+             * {
+             * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+             * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+             * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+             * "retina": //Whether the canvas is based on the devicePixelRatio
+             * }
+             **/
+            egret.runEgret({ renderMode: "webgl", audioType: 0 });
+        });
+    });
+    xhr.send(null);
+</script>
+
+    <script type="text/javascript">
+        /**
+         *充钱通知app
+         */
+        function torechargeScore(p) {//充值0，没钱1 通知app
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+
+                window.webkit.messageHandlers.RechargeScore.postMessage(p);
+
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+
+                window.JS2KK.onRechargeScore(p);
+
+            } else {
+
+            };
+        }
+
+
+        /**
+         * @param id 游戏id
+         * @param type 显示位置
+         * @param desc 中奖信息
+         */
+        function toprizeScore (strobject) {//特效通知app
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+
+                window.webkit.messageHandlers.PrizeScore.postMessage(strobject);
+
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+
+                window.JS2KK.onWinningPrize(strobject);//中奖
+
+            } else {
+
+            };
+        }
+
+        function  toOnChangeScore(score) {//通知修改金币
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+
+                window.webkit.messageHandlers.OnChangeScore.postMessage(score);
+
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+
+                window.JS2KK.onChangeScore(score+"");
+
+            } else {
+
+            };
+        }
+
+        function  toCompleteGame() {//通知app游戏加载完成
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+
+                window.webkit.messageHandlers.OnCompleteGame.postMessage(1);
+
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+
+                window.JS2KK.onCompleteGame();
+
+            } else {
+
+            };
+        }
+
+        function hitGameCompleteGame(type){//游戏隐藏已经完成 //1代表上下隐藏     0代表左右隐藏
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+
+                window.webkit.messageHandlers.HitCompleteGame.postMessage(type);
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+
+                window.JS2KK.onHitCompleteGame(type);
+
+            } else {
+
+            };
+        }
+
+        function showGameCompleteGame(type){//游戏显示已经完成  1代表上下显示    0代表左右显示
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+
+                window.webkit.messageHandlers.ShowCompleteGame.postMessage(type);
+
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+
+                window.JS2KK.onShowCompleteGame(type);
+
+            } else {
+
+            };
+        }
+
+        function refurbishScores () {//刷新金币
+            window.platformInstance.refurbishScore();
+        }
+
+        function resetGame() {//刷新游戏
+            window.platformInstance.refurshGame();
+        }
+        window.onresize = function () {
+            window.platformInstance.setSeerenSize(window.document.body.clientWidth, window. document.body.clientHeight)
+        };
+        function glidegame(type){//1代表上下显示或者隐藏     0代表左右显示或隐藏
+            if(type=="1"){
+                window.platformInstance.updownglideGame();
+            }else{
+                window.platformInstance.rightleftGame();
+            }
+        }
+        function getScreen(){
+            window.platform.setScreenSize(window.document.body.clientWidth,window. document.body.clientHeight)
+        }
+
+    </script>
+</body>
+
+</html>
